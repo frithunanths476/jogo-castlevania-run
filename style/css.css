@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+body{
+    background-color: black;
+    min-height: 100vh;
+}
+
+h1{
+    color: #FF0000;
+    font-family: 'Darumadrop One', cursive;
+    text-align: center;
+}
+
+.tela-do-jogo{
+    width: 100%;
+    height: 580px;
+    border-bottom: 1px solid black;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-image: url('https://samwebsterualed2019.files.wordpress.com/2019/12/sequoiaforest2-1.png');
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+}
+
+.zombie{
+    position: absolute;
+    bottom: 0;
+    width: 250px;
+    animation: zombie-corre 1.1s infinite linear;
+    transform: rotateY(180deg);
+}
+
+.belmont{
+    width: 300px;
+    position: absolute;
+    bottom: -20px;
+}
+
+.pulo{
+    animation: pulo 500ms ease-out;
+}
+
+@keyframes zombie-corre{
+    from{
+        right: -80px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes pulo{
+    0%{
+        bottom: 0;
+    }
+
+    40%{
+        bottom: 160px;
+    }
+
+    50%{
+        bottom: 160px;
+    }
+
+    60%{
+        bottom: 160px;
+    }
+
+    100%{
+        bottom: 0;
+    }
+}
+
+::-webkit-scrollbar{
+    width: 0px;
+}
+
+/* tela de inicio*/
+
+#inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.bg_inicio {
+    background-image: url('../img/castlevania\ \(3\).png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color: #FF0000;
+    font-family: 'Darumadrop One', cursive;
+    text-align: center;
+    margin-bottom: 103px;
+    margin-top: -67px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #FF0000;
+    color: white;
+    border-radius: 25px;
+    cursor: crosshair;
+}
+
+button:hover {
+    background-color: #800000;
+}
