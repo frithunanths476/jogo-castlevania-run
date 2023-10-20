@@ -29,21 +29,37 @@ const divTela = setInterval(() => {
         zombie.style.transform = "rotateY(180deg)"
         zombie.style.width = "135px"
         zombie.style.marginBottom = "-1px"
-        zombie.style.animationDuration = "1.15s"
+        zombie.style.animationDuration = "1.5s"
     } else if (px == -3420) {
         tela.style.backgroundImage = "url('./img/bg-2.png')"
         zombie.src = './img/skeletonEnemie.gif'
         zombie.style.transform = "rotateY(180deg)"
         zombie.style.width = "152px"
         zombie.style.marginBottom = "-1px"
-        zombie.style.animationDuration = "1.25s"
+        zombie.style.animationDuration = "1.15s"
     } else if (px == -6630) {
         tela.style.backgroundImage = "url('./img/bgFinal.png')"
         zombie.src = './img/cavalo.gif'
         zombie.style.transform = "none"
         zombie.style.width = "244px"
         zombie.style.marginBottom = "-26px"
-        zombie.style.animationDuration = "0.75s"
+        zombie.style.animationDuration = "0.85s"
+    } else if (px == -15990) {
+
+        zombie.style.animation = 'none'
+        zombie.style.left = `${zombiePosition}px`
+
+        belmont.style.animation = 'none'
+        belmont.style.bottom = `${belmontPosition}px` 
+
+        Swal.fire(
+            'Parabéns',
+            'Você espulsou os lacaios de Ciprian em Benet',
+            'success'
+        )
+
+        clearInterval(loop)
+        clearInterval(divTela)
     }
 
 }, 100)
@@ -64,6 +80,11 @@ const loop = setInterval(() => {
         belmont.src = './img/giphy.gif'
         belmont.style.margin = "-29px"
         belmont.style.width = "150px"
+
+        Swal.fire(
+            'Você morreu',
+            'error'
+        )
 
         clearInterval(loop)
         clearInterval(divTela)
